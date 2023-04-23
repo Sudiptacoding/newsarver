@@ -34,7 +34,7 @@ const nameModel = mongoose.model('names', nameSchema)
 
 
 
-app.post('https://newsarver.onrender.com/name', async (req, res) => {
+app.post('/name', async (req, res) => {
     try {
         const name = req.body;
         const modelSave = nameModel({
@@ -47,7 +47,7 @@ app.post('https://newsarver.onrender.com/name', async (req, res) => {
     }
 })
 
-app.get('https://newsarver.onrender.com/data', async (req, res) => {
+app.get('/data', async (req, res) => {
     try {
         const user = await nameModel.find({})
         if (user) {
@@ -61,7 +61,7 @@ app.get('https://newsarver.onrender.com/data', async (req, res) => {
 
 
 
-app.get('https://newsarver.onrender.com/all', (req, res) => {
+app.get('/all', (req, res) => {
     res.send('Amar sonr bangla ami tomai valobasi')
 })
 
